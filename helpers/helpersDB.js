@@ -36,13 +36,25 @@ const readAndDelete = (content_id, file) => {
       if (err) {
         console.error(err);
       } else {
-        const parsedData = JSON.parse(data);
-        const updatedData = parsedData.map((todo, index) => { 
-            if (todo.id === content_id) {
-                parsedData = parsedData.splice(index, 1);
+        let parsedData = JSON.parse(data);
+        console.log('my parsed data delete: ', parsedData[0].id);
+
+        let count = 0;
+        let currId = '';
+
+        let idFound = false;
+        while (count < parsedData.length && idFound === false) {
+            currId = parsedData[count].id;
+            if (currId === content_id) {
+                idFound = true
+                break;
             }
-        })
-        writeToFile(file, updatedData);
+            count++;
+        };
+        const deletionIndex = count;
+        parsedData.splice(deletionIndex, 1);
+        
+        writeToFile(file, parsedData);
       }
     });
   };
