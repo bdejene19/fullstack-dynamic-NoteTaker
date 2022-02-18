@@ -13,8 +13,6 @@
 
   * [Contribution Guidelines](#contribution-guidelines)
 
-  * [Test Instructions](#test-instructions)
-
   * [Questions](#questions)
 
   ## Description
@@ -26,7 +24,7 @@
   ## Installation Instructions
 
     
-<pre>Install Node.js</pre>
+1. Install Node.js
 
 <pre>npm i</pre>
 
