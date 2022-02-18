@@ -1,7 +1,7 @@
 const notes = require('express').Router();
 const { v4: uuid } = require('uuid');
 
-const { readFromFile, readAndAppend } = require('../helpers/helpersDB');
+const { readFromFile, readAndAppend, readAndDelete } = require('../helpers/helpersDB');
 notes.get('/', (req, res) => {
     readFromFile('./db/db.json')
     .then((data) => {
@@ -17,14 +17,16 @@ notes.post('/', (req, res) => {
         title: title,
         text: text
     }
-    console.log(`${req.method} fired on /api/notes`)
     readAndAppend(newPost, './db/db.json')
-    res.json('success')
+    console.log('sent request')
+    res.json('success adding new post')
 })
 
 
 notes.delete('/:id', (req, res) => {
-    console.log(`${req.method} `)
+    const deleteId = req.params.id;
+    readAndDelete(deleteId, './db/db.json');
+    res.json('success deleting old post')
 })
 
 module.exports = notes;
