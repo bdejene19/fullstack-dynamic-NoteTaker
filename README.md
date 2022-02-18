@@ -47,11 +47,6 @@ Offer users ability to create notes that can be persisted and revisted at a late
   ## Contribution Guidelines
 Independent project. DM for fork/pull request.
 
-  ## Test Instructions
-
-  
-<pre></pre>
-
 
   ## Questions
 
