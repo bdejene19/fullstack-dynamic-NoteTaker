@@ -17,6 +17,10 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, 'public/notes.html'))
 })
 
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+})
+
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, (err) => err ? console.log('error occured trying to run sever') : console.log(`Server running at http://localhost:${PORT}`))
