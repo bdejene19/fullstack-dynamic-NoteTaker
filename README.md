@@ -1,3 +1,6 @@
+### Deployed Live Version
+* https://bd-dynamic-notes.herokuapp.com/
+
 # Dynamic FullStack Note-Taker 
 
   ## Table of Contents:
@@ -17,6 +20,8 @@
   ## Description
 
   A note has a title and text about it that will be persisted to a local json file as a database.Currently the application has CRUD functionality, except the ability to update past notes. 
+    ## Live Demo Screenshot
+![Screen shot of full stack application referring to a todo - get groceries. Must pick up eggs, milk chicken and ground beef](../Assets/dynamicNotes.png)
 
   ## Installation Instructions
 
